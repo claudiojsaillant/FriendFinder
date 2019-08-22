@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Survey!</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Survey here!</h1>
+    <div class="container">
+        <form action="">
+            <div class="form-group">
+                <label for="picture" class="control-label">Picture url</label>
+                <input type="text" class="form-control" id="newUrl" name="url" value="" required=""
+                    title="Please enter your picture URL" placeholder="URL">
+                <span class="help-block"></span>
+            </div>
+            <div class="form-group">
+                <label for="inputState1">Number of Records to Retrieve: </label>
+                <select id="inputState1" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputState2">Number of Records to Retrieve: </label>
+                <select id="inputState2" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputState3">Number of Records to Retrieve: </label>
+                <select id="inputState3" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputState4">Number of Records to Retrieve: </label>
+                <select id="inputState4" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputState5">Number of Records to Retrieve: </label>
+                <select id="inputState5" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <input type="submit" id="submit-btn" class="btn btn-primary" value="Submit!" />
+        </form>
+
+    </div>
+    <script>
+        //form control width set 50% to the evey one excepr url and name
+
+        $('#submit-btn').on('click', function (e) {
+            e.preventDefault();
+            var data = {
+                imageURL: $('#newUrl').val(),
+                answers: [
+                    parseInt($('#inputState1').val()),
+                    parseInt($('#inputState2').val()),
+                    parseInt($('#inputState3').val()),
+                    parseInt($('#inputState4').val()),
+                    parseInt($('#inputState5').val())
+                ]
+            }
+            $.post("/api/friends", data)
+                .then(function (data) {
+                    console.log(data);
+                    alert("Adding new friend..");
+                });
+        });
+
+
+
+    </script>
+</body>
+
+</html>
