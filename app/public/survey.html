@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <h1>Survey here!</h1>
+    <h1 class="text-center">Survey here!</h1>
     <div class="container">
         <form action="">
             <div class="form-group">
@@ -78,6 +78,56 @@
                     <option>5</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="inputState6">Number of Records to Retrieve: </label>
+                <select id="inputState6" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputState7">Number of Records to Retrieve: </label>
+                <select id="inputState7" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputState8">Number of Records to Retrieve: </label>
+                <select id="inputState8" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputState9">Number of Records to Retrieve: </label>
+                <select id="inputState9" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputState10">Number of Records to Retrieve: </label>
+                <select id="inputState10" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
             <input type="submit" id="submit-btn" class="btn btn-primary" value="Submit!" />
         </form>
 
@@ -94,15 +144,25 @@
                     parseInt($('#inputState2').val()),
                     parseInt($('#inputState3').val()),
                     parseInt($('#inputState4').val()),
-                    parseInt($('#inputState5').val())
+                    parseInt($('#inputState5').val()),
+                    parseInt($('#inputState6').val()),
+                    parseInt($('#inputState7').val()),
+                    parseInt($('#inputState8').val()),
+                    parseInt($('#inputState9').val()),
+                    parseInt($('#inputState10').val()),
                 ]
             }
             $.post("http://localhost:3000/api/friends", data)
                 .then(function (data) {
                     console.log(data);
                 });
-                console.log('posted')
-        });
+                for(i = 0; i < 10; i++){
+                    $('#inputState' + (i+1)).val('')
+                }
+                $('#newUrl').val('');
+        }).done(function(data) {
+            console.log(data, 'data?')
+      		});;
 
 
 

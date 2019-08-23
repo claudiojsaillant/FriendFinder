@@ -29,13 +29,13 @@ function objectLoop(arre, myArray) {
     totalDifference(arre[j], myArray)
 
   }
-  bestIndex = friendSums.indexOf(Math.min.apply(null, arr));
+  bestIndex = friendSums.indexOf(Math.min.apply(null, friendSums));
   friendSums = [];
   return bestIndex;
 }
 
 
-console.log(objectLoop(objArray, arr1));
+
 
 
 module.exports = function (app) {
@@ -47,7 +47,11 @@ module.exports = function (app) {
   app.post("/api/friends", function (req, res) {
     jsonData = req.body;
 
+    // figure out how to incorporate the function here
+    data[objectLoop(objArray, arr1)]; // display best friend
     data.push(jsonData);
+    // make name input, make modal, 
+    res.json({status: 'OK', matchName: jsonData.name, matchImage: jsonData.imageURL});
   });
 
 }
