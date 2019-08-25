@@ -1,171 +1,287 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Survey!</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap 4 Modal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-image: url(https://thumbs.dreamstime.com/z/colorful-up-hands-vector-illustration-association-unity-partners-company-friendship-friends-background-volunteers-celebration-115519667.jpg);
+        }
+
+        .bs-example {
+            margin: 20px;
+        }
+
+        #modalimg {
+            width: 50%;
+        }
+
+        img {
+            width: 250px;
+        }
+
+        .form-group,
+        .form-basic {
+
+            padding-bottom: 20px;
+            padding-top: 15px;
+
+        }
+
+        .ansinput {
+            width: 15%;
+        }
+
+        .basicans {
+            width: 55%;
+        }
+
+        .form-basic,
+        .form-group {
+            border: none;
+            border-bottom: 2px solid;
+            border-radius: 130px 50px/4px 2px;
+        }
+
+        form {
+            padding-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1 class="text-center">Survey here!</h1>
     <div class="container">
-        <form action="">
-            <div class="form-group">
-                <label for="picture" class="control-label">Picture url</label>
-                <input type="text" class="form-control" id="newUrl" name="url" value="" required=""
-                    title="Please enter your picture URL" placeholder="URL">
-                <span class="help-block"></span>
+        <div class="bs-example">
+            <div id="myModal" class="modal fade" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Confirmation</h5>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <h2>Your friend match is: </h2>
+                            <h4 id="username" class="text-center">Name: Claudio Saillant</h4>
+                            <div id="modalimg mx-auto" class="text-center">
+                                <img id="userimg"
+                                    src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/49656430_10212927175750656_6798208784549281792_n.jpg?_nc_cat=103&_nc_oc=AQlF2ZyVmRW1UqpSzpMz065n9E99hQeolkaxSuSMdat_CCNOVFMGIWoXFHhAcMXWMpc&_nc_ht=scontent-atl3-1.xx&oh=ae5175ad9980a85652c225f16c7bc7fa&oe=5E0C6B1C"
+                                    alt="userimg">
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="inputState1">Number of Records to Retrieve: </label>
-                <select id="inputState1" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+
+        </div>
+        <h1 class="text-center">Friend survey</h1>
+        <div class="container">
+            <!-- Modal -->
+            <div class="bs-example">
+                <div id="myModal" class="modal fade" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Confirmation</h5>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Do you want to save changes to this document before closing?</p>
+                                <p class="text-secondary"><small>If you don't save, my changes will be lost.</small>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="inputState2">Number of Records to Retrieve: </label>
-                <select id="inputState2" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="inputState3">Number of Records to Retrieve: </label>
-                <select id="inputState3" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="inputState4">Number of Records to Retrieve: </label>
-                <select id="inputState4" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="inputState5">Number of Records to Retrieve: </label>
-                <select id="inputState5" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="inputState6">Number of Records to Retrieve: </label>
-                <select id="inputState6" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="inputState7">Number of Records to Retrieve: </label>
-                <select id="inputState7" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="inputState8">Number of Records to Retrieve: </label>
-                <select id="inputState8" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="inputState9">Number of Records to Retrieve: </label>
-                <select id="inputState9" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="inputState10">Number of Records to Retrieve: </label>
-                <select id="inputState10" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <input type="submit" id="submit-btn" class="btn btn-primary" value="Submit!" />
-        </form>
+            <form action="">
+                <div class="form-basic">
+                    <label for="picture" class="control-label">Name!</label>
+                    <input type="text" class="form-control basicans" id="name" name="name" value=""
+                        title="Please enter your name" placeholder="name">
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-basic">
+                    <label for="picture" class="control-label">Picture url</label>
+                    <input type="text" class="form-control basicans" id="newUrl" name="url" value="" required=""
+                        title="Please enter your picture URL" placeholder="URL">
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label for="inputState1">Number of Records to Retrieve: </label>
+                    <select id="inputState1" class="form-control ansinput">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputState2">Number of Records to Retrieve: </label>
+                    <select id="inputState2" class="form-control ansinput">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputState3">Number of Records to Retrieve: </label>
+                    <select id="inputState3" class="form-control ansinput">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputState4">Number of Records to Retrieve: </label>
+                    <select id="inputState4" class="form-control ansinput">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputState5">Number of Records to Retrieve: </label>
+                    <select id="inputState5" class="form-control ansinput">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputState6">Number of Records to Retrieve: </label>
+                    <select id="inputState6" class="form-control ansinput">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputState7">Number of Records to Retrieve: </label>
+                    <select id="inputState7" class="form-control ansinput">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputState8">Number of Records to Retrieve: </label>
+                    <select id="inputState8" class="form-control ansinput">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputState9">Number of Records to Retrieve: </label>
+                    <select id="inputState9" class="form-control ansinput">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputState10">Number of Records to Retrieve: </label>
+                    <select id="inputState10" class="form-control ansinput">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <input type="submit" id="submit-btn" class="btn btn-primary" value="Submit!" />
+            </form>
+        </div>
 
     </div>
     <script>
         //form control width set 50% to the evey one excepr url and name
+        function displayModal(data) {
+            $('#username').text(data.friendName)
+            $('#userimg').attr('src', data.friendImage);
+            $("#myModal").modal('show');
+        }
+
+        function checkInput() {
+            for (i = 0; i < 10; i++) {
+                if ($('#inputState' + (i + 1)).val() === '') {
+                    return alert('Make sure you fill out all the input boxes');
+                }
+            }
+            if ($('#name').val() === '') { return alert('Make sure you fill out all the input boxes'); }
+            else if ($('#newUrl').val() === '') { return alert('Make sure you fill out all the input boxes'); }
+            else {
+                var data = {
+                    name: $('#name').val(),
+                    imageURL: $('#newUrl').val(),
+                    answers: [
+                        parseInt($('#inputState1').val()),
+                        parseInt($('#inputState2').val()),
+                        parseInt($('#inputState3').val()),
+                        parseInt($('#inputState4').val()),
+                        parseInt($('#inputState5').val()),
+                        parseInt($('#inputState6').val()),
+                        parseInt($('#inputState7').val()),
+                        parseInt($('#inputState8').val()),
+                        parseInt($('#inputState9').val()),
+                        parseInt($('#inputState10').val()),
+                    ]
+                }
+
+                $.post("http://localhost:3000/api/friends", data)
+                    .then(function (data) {
+                        if (data) {
+                            console.log('i got data')
+                            displayModal(data);
+                        }
+                    });
+
+                for (i = 0; i < 10; i++) {
+                    $('#inputState' + (i + 1)).val('')
+                }
+                $('#name').val('')
+                $('#newUrl').val('');
+            }
+        }
 
         $('#submit-btn').on('click', function (e) {
             e.preventDefault();
-            var data = {
-                imageURL: $('#newUrl').val(),
-                answers: [
-                    parseInt($('#inputState1').val()),
-                    parseInt($('#inputState2').val()),
-                    parseInt($('#inputState3').val()),
-                    parseInt($('#inputState4').val()),
-                    parseInt($('#inputState5').val()),
-                    parseInt($('#inputState6').val()),
-                    parseInt($('#inputState7').val()),
-                    parseInt($('#inputState8').val()),
-                    parseInt($('#inputState9').val()),
-                    parseInt($('#inputState10').val()),
-                ]
-            }
-            $.post("http://localhost:3000/api/friends", data)
-                .then(function (data) {
-                    console.log(data);
-                });
-                for(i = 0; i < 10; i++){
-                    $('#inputState' + (i+1)).val('')
-                }
-                $('#newUrl').val('');
-        }).done(function(data) {
-            console.log(data, 'data?')
-      		});;
+            checkInput();
+        })
 
-
-
+    </script>
     </script>
 </body>
 

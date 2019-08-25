@@ -1,12 +1,6 @@
 var friendsFile = require('../data/friends');
 var data = friendsFile.friends;
-
 var friendSums = [];
-var arr1 = [5, 1, 4, 4, 5, 1, 2, 5, 4, 1];
-var objArray = [
-  [3, 2, 6, 4, 5, 1, 2, 5, 4, 1],
-  [5, 1, 4, 4, 5, 1, 2, 5, 4, 1],
-]
 
 function totalDifference(arr1, arr2) {
   sum = 0;
@@ -25,33 +19,28 @@ function totalDifference(arr1, arr2) {
 
 function objectLoop(arre, myArray) {
   for (j = 0; j < arre.length; j++) {
-
-    totalDifference(arre[j], myArray)
-
+    totalDifference(arre[j].answers, myArray)
   }
   bestIndex = friendSums.indexOf(Math.min.apply(null, friendSums));
+  console.log('bestIndex', bestIndex);
   friendSums = [];
   return bestIndex;
 }
 
-
-
-
-
 module.exports = function (app) {
   app.get("/api/friends", function (req, res) {
-    data.push('hello');
     res.json(data);
   });
 
   app.post("/api/friends", function (req, res) {
     jsonData = req.body;
 
-    // figure out how to incorporate the function here
-    data[objectLoop(objArray, arr1)]; // display best friend
     data.push(jsonData);
+
+    friendData = data[objectLoop(data, jsonData.answers)]
+
     // make name input, make modal, 
-    res.json({status: 'OK', matchName: jsonData.name, matchImage: jsonData.imageURL});
+    res.json({ status: 'OK', friendName: friendData.name, friendImage: friendData.imageURL });
   });
 
 }
