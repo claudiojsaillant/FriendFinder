@@ -13,17 +13,52 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        a,
+        h1,
+        .reserv,
+        h3 {
+            color: red
+        }
+
+        .card {
+            background-color: #E8ECEF;
+            border: 0px
+        }
+
+        body {
+            background-image: url(https://cdn.wallpapersafari.com/52/80/BLCQtg.jpg);
+        }
+    </style>
 </head>
-<style>
-    body {
-        background-image: url(https://thumbs.dreamstime.com/z/colorful-up-hands-vector-illustration-association-unity-partners-company-friendship-friends-background-volunteers-celebration-115519667.jpg);
-    }
-</style>
 
 <body>
-    <h1>Ready to rumble</h1>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">Friend Finder</h1>
+            <br>
+            <h3 class="text-center">⚡ Find your match in seconds ⚡</h3>
+            <div class="card">
+                <div class="card-body mx-auto">
+                    <a href="/survey"><button id="reserve" class="btn btn-danger">Find you match 😎</button></a>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friends">API Friends List</a> | <a
+                        href="https://github.com/claudiojsaillant/FriendFinder">GitHub Repo</a></p>
+            </div>
+        </footer>
 
-    <script src="" async defer></script>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <script src="" async defer></script>
 </body>
 
 </html>
