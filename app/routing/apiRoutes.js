@@ -19,10 +19,11 @@ function totalDifference(arr1, arr2) {
 
 function objectLoop(arre, myArray) {
   for (j = 0; j < arre.length; j++) {
-    totalDifference(arre[j].answers, myArray)
+    totalDifference(arre[j].answers, myArray);
   }
-  bestIndex = friendSums.indexOf(Math.min.apply(null, friendSums));
+  bestIndex = friendSums.indexOf(Math.min.apply(Math, friendSums));
   console.log('bestIndex', bestIndex);
+  console.log('Best friend', data[bestIndex]);
   friendSums = [];
   return bestIndex;
 }
@@ -35,12 +36,15 @@ module.exports = function (app) {
   app.post("/api/friends", function (req, res) {
     jsonData = req.body;
 
-    data.push(jsonData);
-
     friendData = data[objectLoop(data, jsonData.answers)]
+    console.log(friendData);
 
-    // make name input, make modal, 
     res.json({ status: 'OK', friendName: friendData.name, friendImage: friendData.imageURL });
+
+    setTimeout(function(){
+      data.push(jsonData);
+    },50)
+
   });
 
 }

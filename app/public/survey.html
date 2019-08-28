@@ -268,16 +268,15 @@
                     ]
                 }
 
-                $.post("https://evening-temple-82997.herokuapp.com/api/friends", data)
+                $.post("http://localhost:3000/api/friends", data)
                     .then(function (data) {
                         if (data) {
-                            console.log('i got data')
                             displayModal(data);
                         }
                     });
 
                 for (i = 0; i < 10; i++) {
-                    $('#inputState' + (i + 1)).val('')
+                    $('#inputState' + (i + 1)).val('1')
                 }
                 $('#name').val('')
                 $('#newUrl').val('');
