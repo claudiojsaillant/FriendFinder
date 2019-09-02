@@ -15,6 +15,7 @@ Package: Contains all the modules the app depends on, so the user can install th
 
 ## Technologies used
 
+Html
 JavaScript
 Node.js
 Node Packages: *express *path
